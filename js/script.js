@@ -43,17 +43,22 @@ function playGame(playerInput){
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     let computerMove = getMoveName(randomNumber);
     let playerMove = getMoveName(playerInput);
-    let result = displayResult(computerMove, playerMove)
-
-    console.log('Wylosowana liczba to: ' + randomNumber);
-    console.log('Gracz wpisał: ' + playerInput);
+    let matchResult = displayResult(computerMove, playerMove)
 
     printMessage('Mój ruch to: ' + computerMove);
     printMessage('Twój ruch to: ' + playerMove);
-    printMessage('Wynik: ' + result);
+    printMessage('Wynik: ' + matchResult);
+
+    if(matchResult == 'Komputer wygrywa!'){
+        computerWins = computerWins + 1;
+    }
+    if(matchResult == 'Ty wygrywasz!'){
+        playerWins = playerWins + 1;
+    }
+
+    let finalResult = 'Komputer: ' + computerWins + ' / Player: ' + playerWins;
+    printResult(finalResult);
 }
-
-
 
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
@@ -64,3 +69,8 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
+
+let computerWins = 0;
+let playerWins = 0;
+
+
