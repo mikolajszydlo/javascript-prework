@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kamień, papier, nożyce</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="splash">
+		<div class="container">
+			<h1>Papier, nożyce, kamień</h1>
+			<p>Zasady gry są bardzo proste:</p>
+			<ul>
+				<li> Kamień pokonuje Nożyce, ale przegrywa z Papierem.</li>
+				<li>Papier pokonuje kamień, ale przegrywa z Nożycami.</li>
+				<li>Nożyce pokonują papier, ale przegrywają z Kamieniem.</li>
+			</ul>
+			<p>Kliknij i sprawdź czy masz więcej szczęścia niż maszyna :-)</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" id="buttons">
+			<button class="btn" type="button" id="play-rock">Kamień</button>
+			<button class="btn" type="button" id="play-paper">Papier</button>
+			<button class="btn" type="button" id="play-scissors">Nożyce</button>
+		</div>
+		<div id="result"></div>
+		<div id="messages"></div>
+	</div>
+	<script src="js/functions.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

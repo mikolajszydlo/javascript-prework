@@ -50,15 +50,18 @@ function playGame(playerInput){
     printMessage('Wynik: ' + matchResult);
 
     if(matchResult == 'Komputer wygrywa!'){
-        computerWins = computerWins + 1;
+        computerWins ++;
     }
     if(matchResult == 'Ty wygrywasz!'){
-        playerWins = playerWins + 1;
+        playerWins ++;
     }
 
     let finalResult = 'Komputer: ' + computerWins + ' / Player: ' + playerWins;
     printResult(finalResult);
 }
+
+let computerWins = 0;
+let playerWins = 0;
 
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
@@ -70,7 +73,6 @@ document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
 
-let computerWins = 0;
-let playerWins = 0;
+
 
 
