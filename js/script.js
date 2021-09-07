@@ -1,5 +1,6 @@
-function playGame(playerInput){
-    function getMoveName(argMoveId){
+{
+const playGame = function(playerInput){
+    const getMoveName = function(argMoveId){
         if(argMoveId == 1){
         return 'kamień';
         }
@@ -13,7 +14,7 @@ function playGame(playerInput){
         return 'nieznany ruch';
     }
 
-    function displayResult(argComputerMove, argPlayerMove){
+    const displayResult = function(argComputerMove, argPlayerMove){
         if(computerMove == 'kamień' && playerMove == 'nożyce'){
             return 'Komputer wygrywa!';
         }
@@ -40,10 +41,10 @@ function playGame(playerInput){
         }
     }
     clearMessages();
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    let playerMove = getMoveName(playerInput);
-    let matchResult = displayResult(computerMove, playerMove)
+    const randomNumber = Math.floor(Math.random() * 3 + 1),
+        computerMove = getMoveName(randomNumber);
+        playerMove = getMoveName(playerInput),
+        matchResult = displayResult(computerMove, playerMove);
 
     printMessage('Mój ruch to: ' + computerMove);
     printMessage('Twój ruch to: ' + playerMove);
@@ -56,12 +57,12 @@ function playGame(playerInput){
         playerWins ++;
     }
 
-    let finalResult = 'Komputer: ' + computerWins + ' / Player: ' + playerWins;
+    const finalResult = 'Komputer: ' + computerWins + ' / Player: ' + playerWins;
     printResult(finalResult);
 }
 
-let computerWins = 0;
-let playerWins = 0;
+let computerWins = 0,
+    playerWins = 0;
 
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
@@ -72,7 +73,7 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
-
+}
 
 
 
